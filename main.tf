@@ -20,8 +20,8 @@ resource "aws_s3_bucket" "task_bucket" {
 
 resource "aws_s3_bucket_object" "sample_file" {
   bucket = aws_s3_bucket.task_bucket.bucket
-  key    = "sample.txt"
-  source = "sample.txt"
+  key    = "bucket.txt"
+  source = "bucket.txt"
 }
 
 output "bucket_name" {
