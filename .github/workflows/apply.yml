@@ -1,4 +1,4 @@
-name: vpc
+name: S3-creation
 
 on:
   workflow_dispatch:
