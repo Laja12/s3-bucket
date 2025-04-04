@@ -2,8 +2,8 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_s3_bucket" "s3-bucket-1" {
-  bucket = "s3-bucket-1"
+resource "aws_s3_bucket" "s3_bucket_1" {
+  bucket = "s3_bucket_1"
 
   versioning {
     enabled = true
@@ -19,11 +19,11 @@ resource "aws_s3_bucket" "s3-bucket-1" {
 }
 
 resource "aws_s3_bucket_object" "sample_file" {
-  bucket = aws_s3_bucket.s3-bucket-1.bucket
+  bucket = aws_s3_bucket.s3_bucket_1.bucket
   key    = "bucket.txt"
   source = "bucket.txt"
 }
 
 output "bucket_name" {
-  value = aws_s3_bucket.s3-bucket-1.bucket
+  value = aws_s3_bucket.s3_bucket_1.bucket
 }
