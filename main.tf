@@ -2,8 +2,8 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_s3_bucket" "s3_bucket_1" {
-  bucket = "example_bucket"
+resource "aws_s3_bucket" "task_bucket" {
+  bucket = "s3-bucket-for-storing-object"
 
   versioning {
     enabled = true
@@ -19,11 +19,11 @@ resource "aws_s3_bucket" "s3_bucket_1" {
 }
 
 resource "aws_s3_bucket_object" "sample_file" {
-  bucket = aws_s3_bucket.s3_bucket_1.bucket
-  key    = "bucket.txt"
-  source = "bucket.txt"
+  bucket = aws_s3_bucket.task_bucket.bucket
+  key    = "sample.txt"
+  source = "sample.txt"
 }
 
 output "bucket_name" {
-  value = aws_s3_bucket.s3_bucket_1.bucket
+  value = aws_s3_bucket.task_bucket.bucket
 }
