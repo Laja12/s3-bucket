@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "s3_bucket_1" {
-  bucket = "s3_bucket_1"
+  bucket = "example_bucket"
 
   versioning {
     enabled = true
